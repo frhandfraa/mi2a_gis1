@@ -1,0 +1,116 @@
+:root {
+    --biru: #0d47a1;
+    --hijau: #2e7d32;
+    --putih: #ffffff;
+    --abu: #f5f5f5;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--abu);
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: linear-gradient(90deg, var(--biru), var(--hijau));
+    color: white;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: white;
+    border-bottom: 2px solid var(--biru);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: var(--biru);
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    background-color: var(--biru);
+    color: white;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--biru);
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    padding: 6px 12px;
+    background-color: var(--hijau);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #777;
+}
