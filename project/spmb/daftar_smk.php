@@ -29,131 +29,7 @@ $dataSmk = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #f4f7fb;
-            color: #333;
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, #0d6efd, #198754);
-            color: #fff;
-            padding: 50px 20px;
-        }
-
-        .page-header .container {
-            max-width: 1140px;
-            margin: auto;
-        }
-
-        .page-header h1 {
-            margin: 0 0 10px;
-            font-size: 32px;
-            font-weight: 700;
-        }
-
-        .page-header p {
-            margin: 0;
-            font-size: 16px;
-            opacity: 0.95;
-        }
-
-        .section {
-            padding: 50px 20px;
-        }
-
-        .container {
-            max-width: 1140px;
-            margin: auto;
-        }
-
-        .smk-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .smk-card {
-            background: #fff;
-            border-radius: 14px;
-            padding: 25px;
-            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .smk-card h3 {
-            margin-top: 0;
-            font-size: 20px;
-            color: #0d6efd;
-        }
-
-        .smk-card p {
-            font-size: 14px;
-            color: #555;
-            margin: 6px 0;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-top: 8px;
-        }
-
-        .badge-akreditasi {
-            background: #198754;
-            color: #fff;
-        }
-
-        .card-actions {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .card-actions a {
-            flex: 1;
-            text-align: center;
-            padding: 10px 0;
-            border-radius: 8px;
-            font-size: 14px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .btn-detail {
-            background: #0d6efd;
-            color: #fff;
-        }
-
-        .btn-detail:hover {
-            background: #0b5ed7;
-        }
-
-        .btn-peta {
-            background: #198754;
-            color: #fff;
-        }
-
-        .btn-peta:hover {
-            background: #157347;
-        }
-
-        .empty-data {
-            text-align: center;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            color: #777;
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -208,3 +84,201 @@ $dataSmk = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 </html>
+
+<style>
+    /* ===== GLOBAL ===== */
+    body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: #f0f4f8;
+        color: #333;
+        scroll-behavior: smooth;
+    }
+
+    a {
+        transition: all 0.3s ease;
+    }
+
+    /* ===== ANIMASI ===== */
+    @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-6px); }
+        60% { transform: translateY(-3px); }
+    }
+
+    /* ===== HEADER ===== */
+    .page-header {
+        background: linear-gradient(135deg, #6c5ce7, #00b894);
+        color: #fff;
+        padding: 60px 20px;
+        animation: fadeUp 1s ease forwards;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .page-header .container {
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .page-header h1 {
+        margin: 0 0 10px;
+        font-size: 36px;
+        font-weight: 800;
+        text-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+    }
+
+    .page-header p {
+        margin: 0;
+        font-size: 18px;
+        opacity: 0.9;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+        padding: 60px 20px;
+    }
+
+    .container {
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    /* ===== GRID CARD ===== */
+    .smk-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .smk-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 1s ease forwards;
+    }
+
+    .smk-card:nth-child(1) { animation-delay: 0.2s; }
+    .smk-card:nth-child(2) { animation-delay: 0.4s; }
+    .smk-card:nth-child(3) { animation-delay: 0.6s; }
+    .smk-card:nth-child(4) { animation-delay: 0.8s; }
+    .smk-card:nth-child(5) { animation-delay: 1s; }
+
+    .smk-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+
+    .smk-card h3 {
+        margin-top: 0;
+        font-size: 22px;
+        color: #6c5ce7;
+        margin-bottom: 10px;
+    }
+
+    .smk-card p {
+        font-size: 14px;
+        color: #555;
+        margin: 6px 0;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 8px;
+        background: #00b894;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    /* ===== CARD ACTIONS ===== */
+    .card-actions {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .card-actions a {
+        flex: 1;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 50px;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        animation: bounce 2s infinite;
+    }
+
+    .btn-detail {
+        background: #6c5ce7;
+        color: #fff;
+    }
+
+    .btn-detail:hover {
+        background: #5a4bd7;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        animation: none;
+    }
+
+    .btn-peta {
+        background: #00b894;
+        color: #fff;
+    }
+
+    .btn-peta:hover {
+        background: #009e7f;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        animation: none;
+    }
+
+    /* ===== EMPTY DATA ===== */
+    .empty-data {
+        text-align: center;
+        background: #fff;
+        padding: 50px;
+        border-radius: 20px;
+        color: #777;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+        animation: fadeUp 1s ease forwards;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 768px) {
+        .smk-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+        }
+    }
+
+    @media(max-width: 480px) {
+        .smk-card h3 {
+            font-size: 20px;
+        }
+
+        .smk-card p, .card-actions a {
+            font-size: 13px;
+        }
+    }
+</style>

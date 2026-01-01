@@ -15,14 +15,16 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #f4f7fb;
+            background: #f0f4f8;
             color: #333;
+            scroll-behavior: smooth;
         }
 
         .page-header {
             background: linear-gradient(135deg, #0d6efd, #198754);
             color: #fff;
-            padding: 45px 20px;
+            padding: 50px 20px;
+            animation: fadeUp 0.8s ease forwards;
         }
 
         .page-header .container {
@@ -32,17 +34,18 @@
 
         .page-header h1 {
             margin: 0;
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 700;
         }
 
         .page-header p {
-            margin-top: 8px;
+            margin-top: 10px;
             opacity: 0.95;
+            font-size: 16px;
         }
 
         .section {
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         .container {
@@ -50,28 +53,36 @@
             margin: auto;
         }
 
+        /* ===== INFO CARD ===== */
         .info-card {
-            background: #ffffff;
-            border-radius: 14px;
+            background: #fff;
+            border-radius: 20px;
             padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+            animation: fadeUp 1s ease forwards;
         }
 
         .info-card h2 {
             margin-top: 0;
             color: #0d6efd;
-            font-size: 22px;
+            font-size: 24px;
+            margin-bottom: 15px;
         }
 
-        .info-card ul {
+        .info-card ul,
+        .info-card ol {
             padding-left: 20px;
         }
 
-        .info-card ul li {
-            margin-bottom: 8px;
+        .info-card ul li,
+        .info-card ol li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #555;
         }
 
+        /* ===== CTA BUTTON ===== */
         .cta-box {
             text-align: center;
             margin-top: 40px;
@@ -84,13 +95,38 @@
             color: #fff;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 10px;
-            transition: 0.3s ease;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            animation: fadeUp 1s ease forwards;
         }
 
         .cta-box a:hover {
             opacity: 0.9;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        /* ===== ANIMASI FADE UP ===== */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width: 768px) {
+            .page-header h1 { font-size: 28px; }
+            .info-card h2 { font-size: 22px; }
+            .info-card ul li,
+            .info-card ol li { font-size: 14px; }
+        }
+
+        @media(max-width: 480px) {
+            .page-header h1 { font-size: 24px; }
+            .info-card h2 { font-size: 20px; }
+            .info-card ul li,
+            .info-card ol li { font-size: 13px; }
+            .cta-box a { padding: 12px 24px; font-size: 14px; }
         }
     </style>
 </head>

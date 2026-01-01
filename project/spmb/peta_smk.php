@@ -41,67 +41,6 @@ if (isset($_GET['id_smk'])) {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
         rel="stylesheet"
     >
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #f4f7fb;
-            color: #333;
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, #0d6efd, #198754);
-            color: #fff;
-            padding: 45px 20px;
-        }
-
-        .page-header .container {
-            max-width: 1140px;
-            margin: auto;
-        }
-
-        .page-header h1 {
-            margin: 0;
-            font-size: 30px;
-            font-weight: 700;
-        }
-
-        .page-header p {
-            margin-top: 8px;
-            opacity: 0.95;
-        }
-
-        .section {
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1140px;
-            margin: auto;
-        }
-
-        #map {
-            width: 100%;
-            height: 600px;
-            background: #eaeaea;
-            border-radius: 12px;
-        }
-
-        .map-note {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .empty-data {
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            color: #777;
-        }
-    </style>
 </head>
 <body>
 
@@ -160,3 +99,106 @@ if (isset($_GET['id_smk'])) {
 
 </body>
 </html>
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* ===== HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, #0d6efd, #198754);
+    color: #fff;
+    padding: 50px 20px;
+    animation: fadeUp 0.8s ease forwards;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.page-header .container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.page-header p {
+    margin-top: 10px;
+    opacity: 0.95;
+    font-size: 16px;
+}
+
+/* ===== SECTION ===== */
+.section {
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+/* ===== MAP ===== */
+#map {
+    width: 100%;
+    height: 400px; /* tidak sebesar halaman */
+    max-width: 100%;
+    background: #eaeaea;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    animation: fadeUp 1s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: auto;
+}
+
+#map:hover {
+    transform: scale(1.01);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+}
+
+/* ===== MAP NOTE ===== */
+.map-note {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+/* ===== EMPTY DATA ===== */
+.empty-data {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    color: #777;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* ===== ANIMASI FADE UP ===== */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+    .page-header h1 { font-size: 28px; }
+    #map { height: 350px; }
+}
+
+@media(max-width: 480px) {
+    .page-header h1 { font-size: 24px; }
+    #map { height: 280px; }
+    .map-note { font-size: 13px; }
+}
+</style>

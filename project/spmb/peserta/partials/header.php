@@ -26,6 +26,7 @@ body {
     padding: 30px;
     background: #fff;
     box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    text-align: center;
     transition: .3s;
 }
 .card-menu.locked {
